@@ -10,7 +10,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: 'https://expense-manager-a93kwoy9u-expense-manager-team2308.vercel.app/',
+    origin: 'https://expense-manager-git-main-expense-manager-team2308.vercel.app/',
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     credentials: true
   })
