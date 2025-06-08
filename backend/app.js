@@ -10,8 +10,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: 'https://expense-manager-git-main-expense-manager-team2308.vercel.app/',
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    origin: 'https://expense-manager-git-main-expense-manager-team2308.vercel.app',
     credentials: true
   })
 );
@@ -20,9 +19,6 @@ app.use(express.json());
 
 app.use('/api/expenses', expenseRoutes);
 
-app.get('/',(req,res)=>{
-   res.send("hey");
-})
 
 const  PORT = process.env.PORT || 5000;
  app.listen(PORT, () => {

@@ -13,13 +13,7 @@ const api = axios.create({
 const expenseAPI = {
     createExpense: async (expenseData) => {
         try {
-            const response = await api.post("/api/expenses", expenseData)
-            .then( response.data)
-            .catch(err => {
-              console.error(err);
-              
-            });
-        
+            const response = await api.post("/api/expenses", expenseData);
             return response.data;
         } catch (error) {
             console.error("Error creating expense:", error);
