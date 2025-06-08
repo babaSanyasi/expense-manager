@@ -13,7 +13,13 @@ const api = axios.create({
 const expenseAPI = {
     createExpense: async (expenseData) => {
         try {
-            const response = await api.post("/expenses", expenseData);
+            const response = await api.post("/api/expenses", expenseData)
+            .then( response.data)
+            .catch(err => {
+              console.error(err);
+              
+            });
+        
             return response.data;
         } catch (error) {
             console.error("Error creating expense:", error);
@@ -31,11 +37,11 @@ const expenseAPI = {
         if(filters.dateRange) {
             params.append("dateRange", filters.dateRange);
         }
-        const response = await api.get(`/expenses?${params.toString()}`);
+        const response = await api.get(`/api/expenses?${params.toString()}`);
         return response.data;
     },
      getAnalytics: async() =>{
-        const response = await api.get("/expenses/analytics");
+        const response = await api.get("/api/expenses/analytics");
         return response.data;
      }
 }
