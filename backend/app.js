@@ -8,7 +8,13 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://expense-manager-one-rouge.vercel.app/',
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    credentials: true
+  })
+);
 app.use(express.json());
 
 
